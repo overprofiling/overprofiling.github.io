@@ -1,10 +1,18 @@
+import { Button } from "@mui/material";
+import Stack from "@mui/material/Stack"
+import { Link } from "react-router-dom";
 
 function App() {
   return (
     <main style={{ padding: "1rem 4rem", textAlign: "center", fontSize: "1.3rem"}}>
-    <h1 style={{marginBottom: 0}}>Overprofiling</h1>
+    <Stack direction="row" spacing={2} alignItems="center" justifyContent="center">
 
-    <p style={{marginTop: 0}}>Browser extension</p>
+    <h1>Overprofiling </h1>
+    <img src="/logo_48.png" alt="logo"/>
+
+    </Stack>
+
+    <p style={{marginTop: 0}}>Browser extension </p>
     <div style={{textJustify: "inter-word", textAlign: "justify", maxWidth: "1000px", margin: "auto"}}>
     <p>
       The online advertising ecosystem is one of the main funding sources of the internet, allowing users to get access to 
@@ -25,6 +33,8 @@ function App() {
      To this end, we have built a plugin that we ask you to install, which will collect the required data to measure this phenomenon.
      </p>
     </div>
+
+      <Button style={{color: "white"}} variant="contained" component={Link} to="/downloads">Download page</Button>
   </main>
   );
 }

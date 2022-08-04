@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -14,21 +14,23 @@ import ResponsiveAppBar from './components/ResponsiveAppBar';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     background: {
       default: "#282c34;"
+    },
+    primary: {
+      main: "#333333"
     }
-  },
+  }
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={darkTheme}>
-    <BrowserRouter>
+    <HashRouter>
     <ResponsiveAppBar/>
     <CssBaseline />
   <Routes>
@@ -36,7 +38,7 @@ root.render(
       <Route path="downloads" element={<Downloads />} />
       <Route path="privacy_policy" element={<Policy />} />
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
   </ThemeProvider>
   </React.StrictMode>
 );
