@@ -33,7 +33,7 @@ export default function Policy() {
           information through the Ad Preference Managers
           (APMs) of each platform every 30 minutes. These are the links
         from where we collect the information: </li>
-          <p><span>Facebook:</span>  <a href="https://www.facebook.com/ds/preferences/"  rel="noreferrer" target="_blank">https://www.facebook.com/ds/preferences/</a></p>
+          <p><span>Facebook:</span>  <a href="https://m.facebook.com/ads/preferences/categories/"  rel="noreferrer" target="_blank">https://m.facebook.com/ads/preferences/categories/</a></p>
           <p><span>Twitter:</span> <a href="https://twitter.com/settings/your_twitter_data/twitter_interests"  rel="noreferrer" target="_blank">https://twitter.com/settings/your_twitter_data/twitter_interests</a> </p>
           <p><span>LinkedIn:</span>  <a href="https://www.linkedin.com/psettings/advertising/li-enterprise-product"  rel="noreferrer" target="_blank">https://www.linkedin.com/psettings/advertising/li-enterprise-product</a> </p>
           <p><span>Google:</span> <a href="https://adssettings.google.com/"  rel="noreferrer" target="_blank">https://adssettings.google.com/</a></p>
@@ -41,7 +41,9 @@ export default function Policy() {
         <li><b>Demographic estimations:</b> we collect Google Demographic estimations which are in the same site that the interests.</li>
 
         <li><b>Ads:</b> we collect the Ads delivered to you on Facebook, Twitter, LinkedIn, YouTube and general websites.
-          Also, we collect the explanations of why you received a specific ad, when it was shown to you and in which URL the ad was shown. In the case of Google ads, will we also collect the HTML of the ad.</li>
+          This include: IDs of the ad, post, images and text associated to them, author of the ad and landing page. 
+          We also collect the explanations of why you received a specific ad.
+          In the case of Google ads, will we also collect the HTML of the ad and in which URL the ad was shown to you. In YouTube video ads are not collected.</li>
 
         <li><b>Clicks on ads:</b> the extension will also collect whether you have clicked an ad or visited the landing page of any ad.</li>
 
@@ -56,7 +58,8 @@ export default function Policy() {
 
       <p>The information collected is also shown to the user, using the extension interface. There are different charts available in which some summarised data is shown.</p>
 
-      <p> To distinguish you between all the users,
+      <p>  We do not collect any Personally Identifiable Information
+        (PII). To distinguish you between all the users,
         we generate an ID of 128 bits created once you install the extension and accept these terms.
         This ID and the information collected remain stored on the browser
         until you remove the extension.</p>
