@@ -21,6 +21,20 @@ export default function Policy() {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
+          <p>
+          <b>CONTROLLER:</b> Universidad Carlos III de Madrid.
+          </p>
+          <p>
+          <b>IDENTIFICATION OF PROCESSING:</b> PI sobreperfilado de usuarios en grandes plataformas de internet
+          </p>
+          <p>
+
+          <b>EXERCISE OF RIGHTS:</b> You may exercise your rights of access, rectification, erasure, right to
+            restriction of processing, data portability and to object, by sending an e-mail to the following
+            email address: dpd@uc3m.es
+            ADDITIONAL INFORMATION: Additional and detailed information about our Privacy Policy can
+            be found at <a style={{color: "white"}} href="https://www.uc3m.es/protecciondedatos">https://www.uc3m.es/protecciondedatos</a>
+          </p>
           <h3>Purpose</h3>
       <p>The goal of this research project is willing to understand how accurate are the profiles Big. Tech companies create from users. In particular, we focus on the following companies: Facebook, Twitter, LinkedIn and Google. The way these companies operate is creating a profile for a user based on the activity of this user assigning them demographic information (e.g., gender, age, location, etc,), interests (e.g., soccer, music, Italian food, etc.) and other elements. The referred companies allow advertisers to run ad campaigns targeting specific profiles defined by the advertiser. Our research projects aims to use advance research techniques to quantify how accurate the profiles created by Big. Tech companies are. This will allow us answering questions like: Do BigTech companies assign users an reasonable number of interests or instead they assign a very large number of interests beyond what an actual human being can cope with? The interests assigned are actually relevant for the users or in fact they are not aligned to what users are interested in? etc. </p>
       <p>To run this project we will have to collect the interests the four referred companies assign to users. To this end we have developed a web browser add on that implements this task. The web browser add on will operate only upon the user provide an explicit consent by accepting these terms of use. </p>
@@ -32,16 +46,16 @@ This is the main reason why we ask you an explicit consentwhen installing the br
       <p>Following, we list the information we collect:</p>
       <ul>
         <li><b>Interests:</b> We collect interests associated with your Facebook, Twitter, LinkedIn and Google profiles. We collect this information through the Ad Preference Managers (APMs) of each platform every 30 minutes. These are the links from where we collect the information:</li>
-          <p><span>Facebook:</span>  <a href="https://m.facebook.com/ads/preferences/categories/"  rel="noreferrer" target="_blank">https://m.facebook.com/ads/preferences/categories/</a></p>
-          <p><span>Twitter:</span> <a href="https://twitter.com/settings/your_twitter_data/twitter_interests"  rel="noreferrer" target="_blank">https://twitter.com/settings/your_twitter_data/twitter_interests</a> </p>
-          <p><span>LinkedIn:</span>  <a href="https://www.linkedin.com/psettings/advertising/li-enterprise-product"  rel="noreferrer" target="_blank">https://www.linkedin.com/psettings/advertising/li-enterprise-product</a> </p>
-          <p><span>Google:</span> <a href="https://adssettings.google.com/"  rel="noreferrer" target="_blank">https://adssettings.google.com/</a></p>
+          <p><span>Facebook:</span>  <a style={{color: "white"}} href="https://m.facebook.com/ads/preferences/categories/"  rel="noreferrer" target="_blank">https://m.facebook.com/ads/preferences/categories/</a></p>
+          <p><span>Twitter:</span> <a style={{color: "white"}} href="https://twitter.com/settings/your_twitter_data/twitter_interests"  rel="noreferrer" target="_blank">https://twitter.com/settings/your_twitter_data/twitter_interests</a> </p>
+          <p><span>LinkedIn:</span>  <a style={{color: "white"}} href="https://www.linkedin.com/psettings/advertising/li-enterprise-product"  rel="noreferrer" target="_blank">https://www.linkedin.com/psettings/advertising/li-enterprise-product</a> </p>
+          <p><span>Google:</span> <a style={{color: "white"}} href="https://adssettings.google.com/"  rel="noreferrer" target="_blank">https://adssettings.google.com/</a></p>
 
         <li><b>Demographic estimations:</b> we collect Google Demographic estimations which are in the same site that the interests.</li>
 
         <li><b>Ads:</b> we collect the Ads delivered to you on Facebook, Twitter, LinkedIn, YouTube and general websites.
-          This include: IDs of the ad, post, images and text associated to them, author of the ad and landing page. 
-          We also collect the explanations of why you received a specific ad.
+          This includes: IDs of the ad, post, images and text associated with them, author of the ad and landing page. 
+          We also collect the explanations of why you received a specific ad (these reasons may include your approximate location).
           In the case of Google ads, will we also collect the HTML of the ad and in which URL the ad was shown to you. In YouTube, video ads are not collected.</li>
 
         <li><b>Clicks on ads:</b> the extension will also collect whether you have clicked an ad or visited the landing page of any ad.</li>
