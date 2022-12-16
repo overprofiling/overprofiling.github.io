@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import Downloads from "./routes/Downloads";
 import Policy from "./routes/Policy";
+import Tutorial from './routes/Tutorial';
 import ResponsiveAppBar from './components/ResponsiveAppBar';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -37,6 +38,7 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path="downloads" element={<Downloads />} />
       <Route path="privacy_policy" element={<Policy />} />
+      <Route path="instructions" element={<Tutorial />} />
     </Routes>
   </HashRouter>
   </ThemeProvider>
