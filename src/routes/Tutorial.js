@@ -1,9 +1,18 @@
 
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
-
+import * as React from 'react';
+import { useCookieState } from "use-cookie-state";
 
 export default function Tutorial() {
+  const [tutorial, setTutorial] = useCookieState('tutorial')
+
+  React.useEffect(() => {
+    if(!tutorial){
+      setTutorial(true)
+    }
+  }, [tutorial])
+
   return (
     <main style={{ padding: "1rem 5rem", textAlign: "left", fontSize: "1.05rem" }}>
       <h1 style={{ textAlign: "center", fontSize: "1.3rem" }}>Instructions</h1>

@@ -14,14 +14,124 @@ import Stack from '@mui/material/Stack';
 import MenuItem from '@mui/material/MenuItem';
 import Divider from '@mui/material/Divider';
 import Avatar from '@mui/material/Avatar';
+import { useCookieState } from "use-cookie-state";
+import { useLocation } from 'react-router-dom';
 
-
-const pages = ['Downloads', 'Privacy Policy'];
-const pages_url = {'Downloads': '/downloads', 'Privacy Policy': '/privacy_policy'};
 
 const ResponsiveAppBar = () => {
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+
+  const [pages, setPages] = React.useState(['Downloads', 'Privacy Policy'])
+  const [pagesUrl, setPagesUrl] = React.useState({'Downloads': '/downloads', 'Privacy Policy': '/privacy_policy', 'Instructions':  '/instructions'})
+  const [tutorial] = useCookieState('tutorial')
+  const location = useLocation();
+
+  const [appBar, setAppBar] = React.useState()
+
+  React.useEffect(() => {
+    if(!pages){
+        return
+    }
+
+    setAppBar(
+        <AppBar position="sticky">
+        <Container maxWidth="xl">
+            <Toolbar disableGutters sx={{minHeight: "68.5px"}}>
+            <Stack direction="row" spacing={1} alignItems="center" sx={{display: { xs: 'none', md: 'flex' }}}>
+                <Avatar variant="rounded" src="/logo_128.png" alt="logo" component={Link} to={"/"}/>
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component={Link} to={"/"}
+                    sx={{
+                    mr: 2,
+                    fontFamily: 'monospace',
+                    fontWeight: 700,
+                    letterSpacing: '.3rem',
+                    color: 'inherit',
+                    textDecoration: 'none',
+                    alignItems: 'center'
+                    }}
+                >
+                    OVERPROFILING
+                </Typography>
+            </Stack>
+    
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                color="inherit"
+                onClick={handleOpenNavMenu}
+                >
+                <MenuIcon />
+                </IconButton>
+                <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                open={Boolean(anchorElNav)}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                }}
+                keepMounted
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                }}
+                onClose={handleCloseNavMenu}
+                sx={{
+                    display: { xs: 'block', md: 'none' },
+                }}
+                >
+                {pages.map((page) => (
+                    <MenuItem key={page} onClick={() => { handleCloseNavMenu()}} component={Link} to={pagesUrl[page]}>
+                    <Typography textAlign="center" style={{color: "white"}} >{page}</Typography>
+                    </MenuItem>
+                ))}
+                </Menu>
+            </Box>
+            <Typography
+                variant="h5"
+                noWrap
+                sx={{
+                mr: 2,
+                display: { xs: 'flex', md: 'none' },
+                flexGrow: 1,
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+                }}
+            >
+                OVERPROFILING
+            </Typography>
+            <Box sx={{ flexGrow: 1, mx: 1, display: { xs: 'none', md: 'flex' }}}>
+                <Stack direction="row" spacing={1} divider={<Divider orientation="vertical" flexItem variant="middle"/>}>
+                
+                {pages.map((page) => (
+                <Button
+                    key={page}
+                    sx={{  color: 'white', display: 'block' }}
+                    component={Link}
+                    to={pagesUrl[page]}
+                >
+                    {page}
+                </Button>
+                ))}
+                </Stack>
+            </Box>
+    
+            </Toolbar>
+        </Container>
+        </AppBar>
+    )
+  }, [pages])
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -30,101 +140,16 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
+  React.useEffect(() =>{
+    if(pages && !pages.includes("Instructions") && ( tutorial || (location && location.pathname === "/instructions")  )){
+        let new_pages = [...pages]
+        new_pages.push("Instructions")
+        setPages(new_pages)
+    }
+  }, [tutorial, pages, location])
+
   return (
-    <AppBar position="sticky">
-    <Container maxWidth="xl">
-        <Toolbar disableGutters sx={{minHeight: "68.5px"}}>
-        <Stack direction="row" spacing={1} alignItems="center" sx={{display: { xs: 'none', md: 'flex' }}}>
-            <Avatar variant="rounded" src="/logo_128.png" alt="logo" component={Link} to={"/"}/>
-            <Typography
-                variant="h6"
-                noWrap
-                component={Link} to={"/"}
-                sx={{
-                mr: 2,
-                fontFamily: 'monospace',
-                fontWeight: 700,
-                letterSpacing: '.3rem',
-                color: 'inherit',
-                textDecoration: 'none',
-                alignItems: 'center'
-                }}
-            >
-                OVERPROFILING
-            </Typography>
-        </Stack>
-
-        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            color="inherit"
-            onClick={handleOpenNavMenu}
-            >
-            <MenuIcon />
-            </IconButton>
-            <Menu
-            id="menu-appbar"
-            anchorEl={anchorElNav}
-            open={Boolean(anchorElNav)}
-            anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-            }}
-            keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-            }}
-            onClose={handleCloseNavMenu}
-            sx={{
-                display: { xs: 'block', md: 'none' },
-            }}
-            >
-            {pages.map((page) => (
-                <MenuItem key={page} onClick={() => { handleCloseNavMenu()}} component={Link} to={pages_url[page]}>
-                <Typography textAlign="center" style={{color: "white"}} >{page}</Typography>
-                </MenuItem>
-            ))}
-            </Menu>
-        </Box>
-        <Typography
-            variant="h5"
-            noWrap
-            sx={{
-            mr: 2,
-            display: { xs: 'flex', md: 'none' },
-            flexGrow: 1,
-            fontFamily: 'monospace',
-            fontWeight: 700,
-            letterSpacing: '.3rem',
-            color: 'inherit',
-            textDecoration: 'none',
-            }}
-        >
-            OVERPROFILING
-        </Typography>
-        <Box sx={{ flexGrow: 1, mx: 1, display: { xs: 'none', md: 'flex' }}}>
-            <Stack direction="row" spacing={1} divider={<Divider orientation="vertical" flexItem variant="middle"/>}>
-            
-            {pages.map((page) => (
-            <Button
-                key={page}
-                sx={{  color: 'white', display: 'block' }}
-                component={Link}
-                to={pages_url[page]}
-            >
-                {page}
-            </Button>
-            ))}
-            </Stack>
-        </Box>
-
-        </Toolbar>
-    </Container>
-    </AppBar>
+    appBar
   );
 };
 export default ResponsiveAppBar;
