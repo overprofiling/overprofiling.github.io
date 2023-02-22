@@ -33,7 +33,7 @@ export default function Tutorial() {
             <li>4) Have an account and be logged in, to at least two of the following platforms: Facebook, Twitter, LinkedIn. </li>
           </ul>
 
-          <p><span><b>Estimated Time: </b>30</span> to 40 minutes
+          <p><span><b>Estimated Time: </b>40</span> to 60 minutes
           </p>
           <b>Sections:</b>
           <ul>
@@ -66,7 +66,7 @@ export default function Tutorial() {
                 <div>
                   <div>Before installing the extension, you should check whether you have logged in and whether you have interests activated in each platform:
                     <br />
-                    It's important to check all settings are on, to avoid having issues regarding the collection of data.
+                    It's <b>important</b> to check all settings are on, to avoid having issues regarding the collection of data.
                     <br />
                   </div>
                   <Grid container spacing={2} style={{ textAlign: "center" }}>
@@ -132,29 +132,48 @@ export default function Tutorial() {
                       <br />
                       <strong>Step 5:</strong> Pin the extension in the chrome toolbar: click on the Extensions Icon at the right side of the toolbar, and then click on the pushpin icon next to Overprofiling.
                     </p>
+                    <p style={{fontSize: "1.15rem"}}>
+                      <b>IMPORTANT:</b> Once you have installed the extension, do not classify the interests directly, first, complete the step 3. Demographic data should be shown to you (with options to answer yes or no), if they do not appear in a few seconds, check that you are connected to your google account, and then restart the browser. If they do not appear after restarting the browser, you can continue the study.
+                    </p>
                   </div>
                 </div>
                 <div className="panel panel-info">
                   <Divider><h2>3 - Browse platforms</h2></Divider>
-                  <div className="panel-body"><strong>Estimated time:</strong> 10 - 20 minutes
+                  <div className="panel-body"><strong>Estimated time:</strong> 20 - 30 minutes
                     <br />
                     Browse your Facebook, Twitter and LinkedIn <strong>feeds </strong>for a few minutes each. You could also visit regular websites that display ads.
                     <br />
                     The extension needs to collect at least <strong><u>60 ads</u></strong>, make sure to collect <u>at least 10 ads from each platform you have an account. </u>
                     <br />
-                    <br />
-                    <strong>Note:</strong> We advise you to start with Facebook, as the ads from this platform will take more time to collect.
-                    <br />
+                    <p>
+                    Once every few minutes, try to reload the page from any of the social networks, to make sure that the extension work properly.
+                    </p>
+
+                    <p>
+                    <strong>Note:</strong> We advise you to start with <b>Facebook</b>, as the ads from this platform will take more time to collect. You will see that some facebook tabs are being open in the background, we only can do this every 30 seconds, so take this into consideration.
+                    </p>
                     <br />
                     You can check the number of ads in the Ads Collected Tab:
                     <br />
                     <br />
                     <img alt="Ads collected tab" height="340" src="https://eupoliticalbarometer.uc3m.es/overprofiling/Tutorial5.png" width="554" />
+                    <h3>Are you having problems during the collection of ads?</h3>
+                    <p>
+                    <b>Facebook ads are being shown very slowly: </b> 
+                    due to limitations with Facebook, the extension is only able to collect information from an ad every 30 seconds. If you have spent some minutes on Facebook already, go to another platform to collect more ads.  
+                    </p>
+                    <p>
+                    <b>No ads or little ads are being shown in the extension:</b> reload the tab from Facebook, Twitter or LinkedIn. If the error continues try to restart the web browser. Check whether ads are being devilered to you in any of these platforms, as you may not be receiving ads in that platform.
+                    </p>
+                    <p>
+                      <b>How do I get Google Ads?: </b> this ads are displayed in general websites rather than the web searcher. Any site can be used for this case, such as news sites.
+                    </p>
+
                   </div>
                 </div>
                 <div className="panel panel-info">
                   <Divider><h2>4 - Classify Interests</h2></Divider>
-                  <div className="panel-body"><strong>Estimated time</strong>: 5 - 7.5 minutes
+                  <div className="panel-body"><strong>Estimated time</strong>: 5 - 8 minutes
                     <br />
                     Once you have seen at least 60 ads, go to the Interests Tab:
                     <br />
@@ -173,7 +192,7 @@ export default function Tutorial() {
                 </div>
                 <div className="panel panel-info">
                   <Divider><h2>5 - Classify Ads</h2></Divider>
-                  <div className="panel-body"><strong>Estimated time</strong>: 5 - 7.5 minutes
+                  <div className="panel-body"><strong>Estimated time</strong>: 5 - 8 minutes
                     <br />
                     <br />
                     Go to Classify Ads tab:
